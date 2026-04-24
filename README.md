@@ -1,6 +1,6 @@
-# My Personal Git Tutorial
+# My Personal Git Tutorial with GitKraken
 
-A customized guide to everyday Git commands, tailored for my workflow and projects.
+A customized guide to everyday Git commands and GitKraken, tailored for my workflow and projects.
 
 Inspired by various Git resources, but made unique with personal examples and notes.
 
@@ -10,326 +10,175 @@ Don't forget to ⭐ this repo if you find it helpful!
 
 ## Table of Contents
 
-- [Getting Started](#getting-started)
-- [Basic Workflow](#basic-workflow)
-- [Branching](#branching)
-- [Fixing Mistakes](#fixing-mistakes)
-- [Collaboration](#collaboration)
-- [Advanced Tips](#advanced-tips)
-- [Emergency Fixes](#emergency-fixes)
+- [Setting Up Git and GitKraken](#setting-up-git-and-gitkraken)
+- [Creating and Initializing a Git Repository](#creating-and-initializing-a-git-repository)
+- [Staging and Committing Changes](#staging-and-committing-changes)
+- [Using GitKraken to Enhance Your Workflow](#using-gitkraken-to-enhance-your-workflow)
+- [Working with Branches](#working-with-branches)
+- [Pushing and Pulling Code to GitHub](#pushing-and-pulling-code-to-github)
+- [Merging and Resolving Merge Conflicts](#merging-and-resolving-merge-conflicts)
+- [Using AI Features in GitKraken](#using-ai-features-in-gitkraken)
+- [Examples in This Repo](#examples-in-this-repo)
 
 ---
 
-## Getting Started
+## Prerequisites
 
-### Cloning a Repository
+Before we begin, ensure you have the following installed on your system:
 
-To start working on a project:
+- Git: Download from [Git Official Site](https://git-scm.com/downloads)
+- GitKraken: Free to use; download it from [GitKraken Official Site](https://www.gitkraken.com/)
+
+---
+
+## 1. Setting Up Git and GitKraken
+
+To begin using Git in your development environment, first download and install Git. Follow these steps:
+
+Go to the [Git Downloads page](https://git-scm.com/downloads) and select the appropriate version for your system (Windows, Mac, or Linux).
+
+After installation, verify Git is installed by opening a terminal and typing:
 
 ```bash
-git clone <repository-url>
-cd <project-directory>
+git --version
 ```
+
+Next, install GitKraken, a graphical interface for Git that makes managing repositories much easier. Download from [GitKraken Official](https://www.gitkraken.com/).
+
+---
+
+## 2. Creating and Initializing a Git Repository
+
+Create a new project folder or open your existing project in VS Code.
+
+Open your terminal and navigate to your project folder. Type:
+
+```bash
+git init
+```
+
+This will initialize an empty Git repository in your project folder.
+
+*(Screenshot: Initializing Git Repository - Replace with actual screenshot showing terminal with the git init command.)*
+
+---
+
+## 3. Staging and Committing Changes
+
+After initializing your repository, add files to Git:
+
+Create or edit a file (e.g., index.html) in your project.
+
+Stage the file to Git by typing:
+
+```bash
+git add index.html
+```
+
+Or stage all files:
+
+```bash
+git add .
+```
+
+Commit your changes:
+
+```bash
+git commit -m "Add index.html file"
+```
+
+*(Screenshot: Committing Changes - Replace with actual screenshot showing VS Code or GitKraken commit window.)*
+
+---
+
+## 4. Using GitKraken to Enhance Your Workflow
+
+GitKraken helps visualize commits, branches, and changes. Here's how to get started:
+
+- Download and install GitKraken.
+- Log in with your GitHub account.
+- Open your repository in GitKraken to see all your commits visually.
+
+*(Screenshot: GitKraken Interface - Replace with actual screenshot showing GitKraken interface with a repository.)*
+
+---
+
+## 5. Working with Branches
+
+### Create a New Branch
+
+In Git, branches allow you to work on different features without affecting the main codebase.
+
+To create a new branch, use:
+
+```bash
+git switch -c <branch-name>
+```
+
+Or in GitKraken, click Create Branch and enter the branch name.
 
 ### Switching Branches
 
-Change to a different branch:
+Switch branches to work on different features:
 
 ```bash
 git switch <branch-name>
 ```
 
-### Pulling Latest Changes
-
-Get updates from the remote:
-
-```bash
-git pull
-```
+*(Screenshot: Creating a New Branch in GitKraken - Replace with actual screenshot showing GitKraken branch creation interface.)*
 
 ---
 
-## Basic Workflow
+## 6. Pushing and Pulling Code to GitHub
 
-### Checking Changes
+### Push Changes
 
-See what you've modified:
-
-```bash
-git status
-```
-
-### Staging and Committing
-
-Save your work:
+To push your changes to a remote repository, first create a GitHub repository. Then, add the remote repository URL:
 
 ```bash
-git add .
-git commit -m "Your descriptive message here"
+git remote add origin <repository-url>
+git push -u origin master
 ```
 
-### Pushing to Remote
+### Pull Changes
 
-Share your changes:
+To pull changes from GitHub:
 
 ```bash
-git push
+git pull origin master
 ```
 
-### Selective Staging
-
-Only stage specific files:
-
-```bash
-git add file1.txt file2.js
-git commit -m "Updated specific files"
-```
-
-### Unstaging Files
-
-Remove from staging area:
-
-```bash
-git restore --staged <filename>
-```
+*(Screenshot: Pushing Code to GitHub - Replace with actual screenshot showing GitKraken push action.)*
 
 ---
 
-## Branching
+## 7. Merging and Resolving Merge Conflicts
 
-### Creating a New Branch
+When working with multiple branches, you may need to merge them. Here's how to do it:
 
-Start a new feature branch:
-
-```bash
-git switch -c <new-branch-name>
-```
-
-### Deleting Branches
-
-Remove a local branch:
+Checkout the branch you want to merge into (usually master):
 
 ```bash
-git branch -d <branch-name>
+git switch master
 ```
 
-Force delete if needed:
+Merge the feature branch into master:
 
 ```bash
-git branch -D <branch-name>
+git merge <feature-branch>
 ```
 
-Delete remote branch:
+### Resolving Merge Conflicts
 
-```bash
-git push origin --delete <branch-name>
-```
-
-### Renaming Branches
-
-Rename your current branch:
-
-```bash
-git branch -m <new-name>
-git push origin -u <new-name>
-git push origin --delete <old-name>
-```
+If there are conflicts, GitKraken helps you resolve them visually. You can accept incoming changes, keep the current changes, or merge both manually.
 
 ---
 
-## Fixing Mistakes
+## 8. Using AI Features in GitKraken
 
-### Reverting File Changes
+GitKraken offers AI-assisted commit message generation and commit reorganization, making it easier to maintain clean and efficient commit histories. For example, you can use AI to generate meaningful commit messages or recompose multiple commits into one.
 
-Undo modifications:
-
-```bash
-git restore .
-```
-
-Or for a specific file:
-
-```bash
-git restore <filename>
-```
-
-### Amending Commits
-
-Add forgotten files or change message:
-
-```bash
-git add <forgotten-files>
-git commit --amend --no-edit
-```
-
-Change commit message:
-
-```bash
-git commit --amend -m "New message"
-```
-
-### Undoing Commits
-
-Keep changes:
-
-```bash
-git reset --soft HEAD~1
-```
-
-Discard changes:
-
-```bash
-git reset --hard HEAD~1
-```
-
-### Fixing Pushed Commits
-
-Amend and force push (use carefully):
-
-```bash
-git commit --amend
-git push --force
-```
-
-**Note:** Avoid on shared branches!
-
----
-
-## Collaboration
-
-### Pulling Changes
-
-Get team updates:
-
-```bash
-git pull
-```
-
-### Handling Conflicts
-
-If pull fails due to changes:
-
-Stash your work:
-
-```bash
-git stash
-```
-
-Pull and restore:
-
-```bash
-git pull
-git stash pop
-```
-
-Resolve conflicts by editing files, then:
-
-```bash
-git add <resolved-files>
-git merge --continue
-```
-
-Or abort:
-
-```bash
-git merge --abort
-```
-
-### Merging Main Branch
-
-Update your branch:
-
-```bash
-git switch main
-git pull
-git switch <your-branch>
-git merge main
-```
-
-Resolve conflicts if any, then push.
-
----
-
-## Advanced Tips
-
-### Squashing Commits
-
-Combine multiple commits:
-
-```bash
-git reset --soft HEAD~<number>
-git commit -m "Squashed commits"
-git push --force
-```
-
-### Cherry-Picking
-
-Copy a commit from another branch:
-
-```bash
-git log  # Find commit hash
-git cherry-pick <commit-hash>
-```
-
-### Rebasing
-
-Update without merge commit:
-
-```bash
-git pull --rebase
-```
-
-If conflicts, fix and:
-
-```bash
-git add <files>
-git rebase --continue
-```
-
-Or abort:
-
-```bash
-git rebase --abort
-```
-
----
-
-## Emergency Fixes
-
-### Reverting Pushed Changes
-
-Undo a commit safely:
-
-```bash
-git revert <commit-hash>
-git push
-```
-
-### Resetting to Another Branch
-
-Make branch identical (destructive):
-
-```bash
-git reset --hard origin/<other-branch>
-```
-
-### Recovering Deleted Commits
-
-Use reflog:
-
-```bash
-git reflog
-git cherry-pick <commit-hash>
-```
-
-### Removing Recent Commits
-
-Permanently delete:
-
-```bash
-git reset --hard HEAD~<number>
-git push --force
-```
+*(Screenshot: AI-Assisted Commit Messages - Replace with actual screenshot showing AI commit feature in GitKraken.)*
 
 ---
 
@@ -354,12 +203,4 @@ git merge experiment
 
 ---
 
-## Common Issues
-
-- **Branch diverged:** `git pull --rebase`
-- **Merge conflict:** Edit files, `git add`, `git merge --continue`
-- **Permission denied:** Check credentials and access
-
----
-
-This is my personalized Git guide. Feel free to fork and adapt for your needs!
+This is my personalized Git guide with GitKraken integration. Feel free to fork and adapt for your needs!

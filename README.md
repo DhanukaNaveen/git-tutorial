@@ -15,6 +15,10 @@ A customized guide to everyday Git commands and GitKraken.
 - [Merging and Resolving Merge Conflicts](#merging-and-resolving-merge-conflicts)
 - [Using AI Features in GitKraken](#using-ai-features-in-gitkraken)
 - [Additional GitKraken Features](#additional-gitkraken-features)
+- [Advanced Git Operations](#advanced-git-operations)
+- [Emergency Fixes](#emergency-fixes)
+- [Quick Reference](#quick-reference)
+- [Troubleshooting](#troubleshooting)
 - [Examples in This Repo](#examples-in-this-repo)
 
 ---
@@ -215,4 +219,156 @@ Customize the interface with dark mode or various themes for comfortable coding 
 Manage and visualize Git hooks to automate tasks like pre-commit checks or post-merge actions.
 
 These features make GitKraken a comprehensive tool for both beginners and advanced users, streamlining complex Git operations.
+
+---
+
+## Advanced Git Operations
+
+### Squashing Commits
+If you have too many commits, combine them into one for a cleaner history:
+
+```bash
+git reset --soft HEAD~<number-of-commits>
+git commit -m "combined message"
+git push --force
+```
+
+### Cherry-Picking Commits
+Copy a specific commit from another branch:
+
+```bash
+git log  # Find the commit hash
+git cherry-pick <commit-hash>
+```
+
+### Rebasing Branches
+Update your branch without a merge commit:
+
+```bash
+git pull --rebase
+```
+
+If conflicts arise:
+1. Fix the conflicts
+2. Stage the files: `git add <files>`
+3. Continue: `git rebase --continue`
+4. Push: `git push --force`
+
+To abort: `git rebase --abort`
+
+---
+
+## Emergency Fixes
+
+### Reverting Pushed Commits
+Undo a commit safely by creating a new commit that reverses it:
+
+```bash
+git revert <commit-hash>
+git push
+```
+
+### Hard Reset to Match Another Branch
+Make your branch identical to another (destructive):
+
+```bash
+git reset --hard origin/<other-branch-name>
+```
+
+**Warning:** This deletes all uncommitted changes!
+
+### Removing Recent Commits Permanently
+Delete the last few commits:
+
+```bash
+git reset --hard HEAD~<number-of-commits>
+git push --force
+```
+
+**Warning:** This cannot be undone!
+
+### Recovering Lost Commits
+Use the reflog to find and restore deleted commits:
+
+```bash
+git reflog
+git cherry-pick <commit-hash>
+```
+
+---
+
+## Quick Reference
+
+```bash
+# Check status
+git status
+
+# Stage and commit all changes
+git add .
+git commit -m "message"
+git push
+
+# Pull latest changes
+git pull
+
+# Create and switch to a new branch
+git switch -c <branch-name>
+
+# Switch branches
+git switch <branch-name>
+
+# Undo all changes
+git restore .
+
+# Stash work temporarily
+git stash
+git stash pop
+```
+
+---
+
+## Troubleshooting
+
+### Branch Diverged
+When your branch has diverged from the remote:
+
+```bash
+git pull --rebase
+```
+
+### Merge Conflicts
+Resolve manually:
+- Edit the conflicting files
+- Remove conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`)
+- Stage: `git add <file>`
+- Continue: `git merge --continue`
+
+### Permission Denied
+- Verify your credentials
+- Ensure you have access to the repository
+
+---
+
+## Examples in This Repo
+
+To practice the commands above, try modifying the `hello.txt` file in this repository:
+
+1. Edit `hello.txt` and add your name.
+2. Run `git status` to see changes.
+3. Stage with `git add hello.txt`.
+4. Commit with `git commit -m "Added my name to hello.txt"`.
+5. Push with `git push`.
+
+Create a new branch for experiments:
+
+```bash
+git switch -c experiment
+# Make changes, commit, then merge back
+git switch master
+git merge experiment
+```
+
+---
+
+This is my personalized Git guide with GitKraken integration. Feel free to fork and adapt for your needs!
 

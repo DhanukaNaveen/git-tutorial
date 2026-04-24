@@ -349,26 +349,6 @@ Resolve manually:
 
 ---
 
-## Examples in This Repo
 
-To practice the commands above, try modifying the `hello.txt` file in this repository:
-
-1. Edit `hello.txt` and add your name.
-2. Run `git status` to see changes.
-3. Stage with `git add hello.txt`.
-4. Commit with `git commit -m "Added my name to hello.txt"`.
-5. Push with `git push`.
-
-Create a new branch for experiments:
-
-```bash
-git switch -c experiment
-# Make changes, commit, then merge back
-git switch master
-git merge experiment
-```
-
----
-
-This is my personalized Git guide with GitKraken integration. Feel free to fork and adapt for your needs!
+This is my personalized Git guide with GitKraken integration!
 

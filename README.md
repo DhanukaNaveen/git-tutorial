@@ -1,10 +1,6 @@
-# My Personal Git Tutorial with GitKraken
+# Git Tutorial with GitKraken
 
-A customized guide to everyday Git commands and GitKraken, tailored for my workflow and projects.
-
-Inspired by various Git resources, but made unique with personal examples and notes.
-
-Don't forget to ⭐ this repo if you find it helpful!
+A customized guide to everyday Git commands and GitKraken.
 
 ---
 
@@ -18,6 +14,7 @@ Don't forget to ⭐ this repo if you find it helpful!
 - [Pushing and Pulling Code to GitHub](#pushing-and-pulling-code-to-github)
 - [Merging and Resolving Merge Conflicts](#merging-and-resolving-merge-conflicts)
 - [Using AI Features in GitKraken](#using-ai-features-in-gitkraken)
+- [Additional GitKraken Features](#additional-gitkraken-features)
 - [Examples in This Repo](#examples-in-this-repo)
 
 ---
@@ -59,7 +56,6 @@ git init
 
 This will initialize an empty Git repository in your project folder.
 
-*(Screenshot: Initializing Git Repository - Replace with actual screenshot showing terminal with the git init command.)*
 
 ---
 
@@ -87,7 +83,7 @@ Commit your changes:
 git commit -m "Add index.html file"
 ```
 
-*(Screenshot: Committing Changes - Replace with actual screenshot showing VS Code or GitKraken commit window.)*
+![Committing Changes](images/Committing%20Changes.png)
 
 ---
 
@@ -99,7 +95,7 @@ GitKraken helps visualize commits, branches, and changes. Here's how to get star
 - Log in with your GitHub account.
 - Open your repository in GitKraken to see all your commits visually.
 
-*(Screenshot: GitKraken Interface - Replace with actual screenshot showing GitKraken interface with a repository.)*
+![GitKraken Interface](images/GitKraken%20Interface.png)
 
 ---
 
@@ -125,7 +121,7 @@ Switch branches to work on different features:
 git switch <branch-name>
 ```
 
-*(Screenshot: Creating a New Branch in GitKraken - Replace with actual screenshot showing GitKraken branch creation interface.)*
+![Creating a New Branch in GitKraken](images/Creating%20a%20New%20Branch%20in%20GitKraken.png)
 
 ---
 
@@ -148,7 +144,7 @@ To pull changes from GitHub:
 git pull origin master
 ```
 
-*(Screenshot: Pushing Code to GitHub - Replace with actual screenshot showing GitKraken push action.)*
+![Pushing Code to GitHub](images/Pushing%20Code%20to%20GitHub.png)
 
 ---
 
@@ -172,13 +168,53 @@ git merge <feature-branch>
 
 If there are conflicts, GitKraken helps you resolve them visually. You can accept incoming changes, keep the current changes, or merge both manually.
 
+![Merging and Resolving Merge Conflicts](images/Merging%20and%20Resolving%20Merge%20Conflicts.png)
+
 ---
 
 ## 8. Using AI Features in GitKraken
 
 GitKraken offers AI-assisted commit message generation and commit reorganization, making it easier to maintain clean and efficient commit histories. For example, you can use AI to generate meaningful commit messages or recompose multiple commits into one.
 
-*(Screenshot: AI-Assisted Commit Messages - Replace with actual screenshot showing AI commit feature in GitKraken.)*
+![AI-Assisted Commit Messages](images/AI-Assisted%20Commit%20Messages.png)
+
+---
+
+## Additional GitKraken Features
+
+GitKraken is packed with powerful features to enhance your Git workflow beyond the basics. Here are some key ones:
+
+### Interactive Rebase
+Easily reorder, edit, or squash commits with a visual drag-and-drop interface. This helps clean up your commit history before merging.
+
+### Fuzzy Finder
+Quickly search and navigate through your repository files, commits, and branches using fuzzy matching.
+
+### Git LFS Support
+Handle large files efficiently with Git Large File Storage integration, keeping your repository lightweight.
+
+### Pull Request Management
+Create, review, and merge pull requests directly within GitKraken, integrated with GitHub, GitLab, and Bitbucket.
+
+### Issue Tracking
+Link commits to issues and track progress on projects with built-in issue management.
+
+### Timelines
+View a chronological timeline of your repository's activity, including commits, merges, and branch creations.
+
+### Multiple Profiles
+Switch between different Git identities and configurations for personal and work projects.
+
+### Integrations and Extensions
+Connect with various tools like Jira, Trello, Slack, and more for seamless project management.
+
+### Dark Mode and Themes
+Customize the interface with dark mode or various themes for comfortable coding sessions.
+
+### Git Hooks
+Manage and visualize Git hooks to automate tasks like pre-commit checks or post-merge actions.
+
+These features make GitKraken a comprehensive tool for both beginners and advanced users, streamlining complex Git operations.
 
 ---
 

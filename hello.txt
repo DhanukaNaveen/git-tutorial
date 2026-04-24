@@ -1,4 +1,4 @@
-Hello, World!
+Hello World!
 
 This is a sample file for demonstrating Git commands in my tutorial repo.
 
